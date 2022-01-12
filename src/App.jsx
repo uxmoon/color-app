@@ -6,7 +6,7 @@ function App() {
     <div>
       <header>
         <h1>Color App</h1>
-        <Palette />
+        <Palette {...seedColors[2]} />
       </header>
     </div>
   );
