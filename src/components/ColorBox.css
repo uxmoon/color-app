@@ -1,7 +1,4 @@
 .ColorBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   cursor: pointer;
 
@@ -20,6 +17,11 @@
 }
 
 .ColorBox-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -15px;
   appearance: none;
   background-color: transparent;
   border: 0 solid transparent;
@@ -45,4 +47,61 @@
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.ColorBox-overlay {
+  opacity: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s ease-in-out;
+  transform: scale(0.1);
+
+  &.active {
+    opacity: 1;
+    z-index: 10;
+    transform: scale(10);
+    position: absolute;
+  }
+}
+
+.ColorBox-message {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0.1);
+
+  &.active {
+    opacity: 1;
+    z-index: 25;
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0.25s;
+  }
+}
+
+.ColorBox-message-title {
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 1px 2px #000;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ColorBox-message-text {
+  font-size: 1.5rem;
+  color: #fff;
 }
