@@ -2,8 +2,10 @@ import React from "react";
 
 export default function Palette() {
   return (
-    <div>
-      <h2>Palette</h2>
+    <div className="Palette">
+      {/* Header - Navbar */}
+      <div className="Palette-colors">{/* color boxes */}</div>
+      {/* Footer */}
     </div>
   );
 }
