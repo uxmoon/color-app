@@ -4,7 +4,7 @@ import "./Palette.css";
 
 export default function Palette(props) {
   const colorBoxes = props.colors.map((color) => (
-    <ColorBox color={color.color} name={color.name} />
+    <ColorBox key={color.color} color={color.color} name={color.name} />
   ));
   return (
     <div className="Palette">
