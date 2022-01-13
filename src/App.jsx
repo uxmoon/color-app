@@ -12,7 +12,7 @@ function App() {
       <Route
         exact
         path="/"
-        render={() => <PaletteList palettes={seedColors} />}
+        render={() => <PaletteList palettes={seedColors} key="list" />}
       />
       <Route
         exact
