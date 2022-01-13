@@ -1,7 +1,9 @@
 import Palette from "./components/Palette";
+import { generatePalette } from "./helpers/colors";
 import seedColors from "./seedColors";
 
 function App() {
+  console.log(generatePalette(seedColors[2]));
   return (
     <div>
       <header>
