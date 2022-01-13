@@ -10,3 +10,4 @@ Based on **Color App** from "The Modern React Bootcamp" by _Colt Steele_.
 
 - [Copy to clipboard](https://www.npmjs.com/package/react-copy-to-clipboard) to copy hex color code.
 - [Chroma.js](https://gka.github.io/chroma.js/) to generate color scales, hex, rgb, and rgba color codes.
+- [MUI](https://mui.com/) Added Material UI to use some Components like Select, Snackbar and others.
