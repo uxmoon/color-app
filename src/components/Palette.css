@@ -32,3 +32,10 @@
   margin-left: -7px;
   margin-top: -3px;
 }
+
+.slider-container {
+  & span {
+    font-size: 14px;
+    color: #444;
+  }
+}

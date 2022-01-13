@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import ColorBox from "./ColorBox";
-import Slider from "rc-slider";
-
-import "rc-slider/assets/index.css";
+import NavBar from "./NavBar";
 import "./Palette.css";
 
 export default function Palette({ palette }) {
@@ -13,23 +11,14 @@ export default function Palette({ palette }) {
   ));
 
   const handleLevel = (level) => {
-    // console.log(level);
+    console.log(level);
     setLevel(level);
   };
 
   return (
     <div className="Palette">
-      {/* Header - Navbar */}
-      <div className="slider">
-        <Slider
-          defaultValue={500}
-          min={100}
-          max={900}
-          step={100}
-          onAfterChange={handleLevel}
-        />
-      </div>
-      <div className="Palette-colors">{colorBoxes}</div>
+      <NavBar level={level} changeLevel={handleLevel} />
+      <main className="Palette-colors">{colorBoxes}</main>
       {/* Footer */}
     </div>
   );
