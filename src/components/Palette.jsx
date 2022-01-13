@@ -12,12 +12,12 @@ export default function Palette({ palette }) {
   ));
 
   const handleLevel = (level) => {
-    console.log(level);
+    // console.log(level);
     setLevel(level);
   };
 
   const handleFormat = (val) => {
-    console.log(val);
+    // console.log(val);
     setFormat(val);
   };
 
