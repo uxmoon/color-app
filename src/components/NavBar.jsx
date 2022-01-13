@@ -14,7 +14,7 @@ export default function NavBar({ level, changeLevel, changeFormat }) {
   const [format, setFormat] = useState("hex");
   const [open, setOpen] = useState(false);
 
-  const handleChange = (event) => {
+  const handleFormatChange = (event) => {
     setFormat(event.target.value);
     changeFormat(event.target.value);
     setOpen(true);
@@ -47,7 +47,7 @@ export default function NavBar({ level, changeLevel, changeFormat }) {
             labelId="select-standard-label"
             id="select-standard"
             value={format}
-            onChange={handleChange}
+            onChange={handleFormatChange}
             label="Format"
           >
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
@@ -61,7 +61,7 @@ export default function NavBar({ level, changeLevel, changeFormat }) {
         open={open}
         onClose={handleClose}
         autoHideDuration={3000}
-        message={<span id="message-id">Color format changed!</span>}
+        message={<span id="message-id">Color format set to {format}!</span>}
         ContentProps={{
           "aria-describedby": "message-id",
         }}

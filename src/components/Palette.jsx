@@ -11,7 +11,7 @@ export default function Palette({ palette }) {
     <ColorBox key={color.id} color={color[format]} name={color.name} />
   ));
 
-  const handleLevel = (level) => {
+  const handleLevelChange = (level) => {
     // console.log(level);
     setLevel(level);
   };
@@ -25,7 +25,7 @@ export default function Palette({ palette }) {
     <div className="Palette">
       <NavBar
         level={level}
-        changeLevel={handleLevel}
+        changeLevel={handleLevelChange}
         changeFormat={handleFormat}
       />
       <main className="Palette-colors">{colorBoxes}</main>
