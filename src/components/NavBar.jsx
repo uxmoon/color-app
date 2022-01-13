@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "rc-slider";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
@@ -27,7 +28,7 @@ export default function NavBar({ level, changeLevel, changeFormat }) {
   return (
     <header className="NavBar">
       <h1 className="logo">
-        <a href="#">react color app</a>
+        <Link to="/">react color app</Link>
       </h1>
       <div className="slider-container">
         <span>Level: {level}</span>
