@@ -1,0 +1,17 @@
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: #fff;
+  height: 5vh;
+
+  & p {
+    font-weight: 700;
+    font-size: 14px;
+    color: #444;
+  }
+}
+
+.emoji {
+  margin: 0 1rem;
+}
