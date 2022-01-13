@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import Slider from "rc-slider";
-import InputLabel from "@mui/material/InputLabel";
+import Snackbar from "@mui/material/Snackbar";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+
 import "rc-slider/assets/index.css";
 import "./NavBar.css";
 
 export default function NavBar({ level, changeLevel, changeFormat }) {
   const [format, setFormat] = useState("hex");
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event) => {
     setFormat(event.target.value);
     changeFormat(event.target.value);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -47,6 +56,21 @@ export default function NavBar({ level, changeLevel, changeFormat }) {
           </Select>
         </FormControl>
       </div>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        open={open}
+        onClose={handleClose}
+        autoHideDuration={3000}
+        message={<span id="message-id">Color format changed!</span>}
+        ContentProps={{
+          "aria-describedby": "message-id",
+        }}
+        action={[
+          <IconButton onClick={handleClose} color="inherit" key="close">
+            <CloseIcon />
+          </IconButton>,
+        ]}
+      />
     </header>
   );
 }
