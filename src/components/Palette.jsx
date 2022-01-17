@@ -5,14 +5,10 @@ import Footer from "./Footer";
 import "./Palette.css";
 
 export default function Palette({ palette }) {
-  const { colors, paletteName, emoji } = palette;
+  const { colors, paletteName, emoji, id } = palette;
 
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
-
-  const colorBoxes = colors[level].map((color) => (
-    <ColorBox key={color.id} color={color[format]} name={color.name} />
-  ));
 
   const handleLevelChange = (level) => {
     // console.log(level);
@@ -23,6 +19,16 @@ export default function Palette({ palette }) {
     // console.log(val);
     setFormat(val);
   };
+
+  const colorBoxes = colors[level].map((color) => (
+    <ColorBox
+      key={color.id}
+      color={color[format]}
+      name={color.name}
+      id={color.id}
+      paletteId={id}
+    />
+  ));
 
   return (
     <div className="Palette">
