@@ -2,10 +2,10 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 
 const Card = styled("div")`
-  border: 1px solid #000;
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 `;
 
 const CardFooter = styled("h2")`
@@ -19,9 +19,24 @@ const CardFooter = styled("h2")`
   }
 `;
 
-export default function MiniPalette({ colors, emoji, id, paletteName }) {
+const CardMiniContainer = styled("div")`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+`;
+
+const CardMini = styled("div")`
+  width: 100%;
+  height: 2.5rem;
+`;
+
+export default function MiniPalette({ colors, paletteName, emoji }) {
+  const miniColorBoxes = colors.map((color) => (
+    <CardMini style={{ backgroundColor: color.color }} />
+  ));
+
   return (
     <Card>
+      <CardMiniContainer>{miniColorBoxes}</CardMiniContainer>
       <CardFooter>
         {paletteName} <span>{emoji}</span>
       </CardFooter>
