@@ -29,13 +29,16 @@ const CardMini = styled("div")`
   height: 2.5rem;
 `;
 
-export default function MiniPalette({ colors, paletteName, emoji }) {
+export default function MiniPalette({ colors, paletteName, emoji, goTo, id }) {
+  const handleLink = () => {
+    goTo(id);
+  };
   const miniColorBoxes = colors.map((color) => (
     <CardMini key={color.name} style={{ backgroundColor: color.color }} />
   ));
 
   return (
-    <Card>
+    <Card onClick={handleLink}>
       <CardMiniContainer>{miniColorBoxes}</CardMiniContainer>
       <CardFooter>
         {paletteName} <span>{emoji}</span>

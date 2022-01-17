@@ -30,7 +30,12 @@ const Main = styled("main")`
   gap: 1rem;
 `;
 
-export default function PaletteList({ palettes }) {
+export default function PaletteList(props) {
+  // console.log(props);
+  const handleClick = (id) => {
+    console.log(id);
+    props.history.push(`/palette/${id}`);
+  };
   return (
     <Page>
       <Container>
@@ -41,8 +46,8 @@ export default function PaletteList({ palettes }) {
           </Nav>
         </header>
         <Main>
-          {palettes.map((palette) => (
-            <MiniPalette key={palette.id} {...palette} />
+          {props.palettes.map((palette) => (
+            <MiniPalette key={palette.id} {...palette} goTo={handleClick} />
           ))}
         </Main>
       </Container>
