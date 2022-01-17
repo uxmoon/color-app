@@ -31,7 +31,7 @@ const CardMini = styled("div")`
 
 export default function MiniPalette({ colors, paletteName, emoji }) {
   const miniColorBoxes = colors.map((color) => (
-    <CardMini style={{ backgroundColor: color.color }} />
+    <CardMini key={color.name} style={{ backgroundColor: color.color }} />
   ));
 
   return (
