@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import cn from "classnames";
 import "./ColorBox.css";
 
-export default function ColorBox({ color, name }) {
+export default function ColorBox({ color, name, paletteId, id }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -38,7 +38,10 @@ export default function ColorBox({ color, name }) {
           </div>
           <button className="ColorBox-button">Copy</button>
         </div>
-        <Link to="/" onClick={(event) => event.stopPropagation()}>
+        <Link
+          to={`/palette/${paletteId}/${id}`}
+          onClick={(event) => event.stopPropagation()}
+        >
           <span className="ColorBox-more">More</span>
         </Link>
       </div>
